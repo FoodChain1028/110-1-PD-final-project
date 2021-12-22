@@ -3,9 +3,8 @@
 
 using namespace std;
 using namespace sf;
-
 /*
-	¹CÀ¸©Ò»İ­nªº class «Å§i
+	éŠæˆ²æ‰€éœ€è¦çš„ class å®£å‘Š
 */
 
 class Bullet
