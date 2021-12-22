@@ -78,11 +78,11 @@ int main()
     Player player(&playerTex);
     int shootTimer = 20;
 
-    // for hp Åã¥Ü
+    // for hp Ã…Ã£Â¥Ãœ
     RectangleShape hpBar;
     hpBar.setFillColor(Color::Red);
 
-    // for mp Åã¥Ü
+    // for mp Ã…Ã£Â¥Ãœ
     RectangleShape mpBar;
     mpBar.setFillColor(Color::Blue);
 
@@ -142,7 +142,7 @@ int main()
         if (player.HP >= 0 && weirdFace.HP >= 0)
         {
             /*===========================================================//
-               ¡iUpdate¡j player
+               Â¡iUpdateÂ¡j player
             //===========================================================*/
             // movement
 
@@ -176,7 +176,7 @@ int main()
             // HP & MP set
 
             /*===========================================================//
-                Update¡j controls
+                UpdateÂ¡j controls
             //===========================================================*/
            
             if (shootTimer < 20)
@@ -184,7 +184,7 @@ int main()
 
 
             /*===========================================================//
-                ¡iUpdate¡j Bullet
+                Â¡iUpdateÂ¡j Bullet
             //===========================================================*/
             playerCenter = Vector2f(player.shape.getPosition().x + 100.f, player.shape.getPosition().y - 15.f);
             mousePosWindow = Vector2f(Mouse::getPosition(window));
@@ -241,7 +241,7 @@ int main()
             
 
             /*===========================================================//
-                 ¡iUpdate¡j Enemy
+                 Â¡iUpdateÂ¡j Enemy
             //===========================================================*/
 
             // Enemy bullets
@@ -299,7 +299,7 @@ int main()
             bHpBar.setPosition(weirdFace.shape.getPosition().x + 5.f, weirdFace.shape.getPosition().y - 25.f);
 
             /*===========================================================//
-               ¡iUpdate¡j UI
+               Â¡iUpdateÂ¡j UI
             //===========================================================*/
             hpBar.setSize(Vector2f((float)player.HP * 0.45f, 10.f));
             mpBar.setSize(Vector2f((float)player.MP * 0.45f, 10.f));
@@ -310,11 +310,11 @@ int main()
 
         
         /*===========================================================//
-            ¡iDraw¡j
+            Â¡iDrawÂ¡j
         //===========================================================*/
         window.clear();
         /*===========================================================//
-            ¡iDraw¡j  player
+            Â¡iDrawÂ¡j  player
         //===========================================================*/
         window.draw(player.shape);
         window.draw(hpBar);
@@ -322,7 +322,7 @@ int main()
 
 
         /*===========================================================//
-            ¡iDraw¡j bullets
+            Â¡iDrawÂ¡j bullets
         //===========================================================*/
         for (size_t i = 0; i < pBullets.size(); i++)
         {
@@ -337,13 +337,13 @@ int main()
 
 
         /*===========================================================//
-            ¡iDraw¡j Boss
+            Â¡iDrawÂ¡j Boss
         //===========================================================*/
         window.draw(weirdFace.shape);
         window.draw(bHpBar);
 
         /*===========================================================//
-             ¡iDraw¡j UI
+             Â¡iDrawÂ¡j UI
         //===========================================================*/
         if (player.HP <= 0)
         {
