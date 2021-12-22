@@ -1,12 +1,12 @@
 //#include<SFML/Graphics.hpp>
 //using namespace sf;
-// //©I¥sµøµ¡
+// //å‘¼å«è¦–çª—
 //int main()
 //{
 //    RenderWindow window(VideoMode(800, 600), "My window");// for size, "name"
 //    window.setFramerateLimit(60); // limit fps to prevent overloading on graphic card.
 //
-//    CircleShape shape(50.f); // ©I¥s¤@­Ó ¶ê§Î ¥s°µ shape
+//    CircleShape shape(50.f); // å‘¼å«ä¸€å€‹ åœ“å½¢ å«åš shape
 // 
 //
 //        // run the program as long as the window is open
@@ -23,15 +23,16 @@
 //
 //            // Update: for charcters [press w] -> [move forward]
 //            // you have to update the screen to see the position change.
-//            shape.move(2.5f, 0.f); //Åı¶ê§Î¥i¥H°Ê
+//            shape.move(2.5f, 0.f); //è®“åœ“å½¢å¯ä»¥å‹•
 //
 //            // Draw: draw new things on the 
-//            //window.clear(); // ¨C¤@¦¸µeªº®É­Ô³£»İ­n§â­ì¥»ªº²M±¼ 
+//            //window.clear(); // æ¯ä¸€æ¬¡ç•«çš„æ™‚å€™éƒ½éœ€è¦æŠŠåŸæœ¬çš„æ¸…æ‰ 
 //
 //            window.draw(shape);
 //
-//            window.display();// ´N¬O®i¥Ü§A«e­±°µªº§ó·s & draw
+//            window.display();// å°±æ˜¯å±•ç¤ºä½ å‰é¢åšçš„æ›´æ–° & draw
 //        }
 //
 //    return 0;
 //}
+// å¯ä»¥æ”¹
