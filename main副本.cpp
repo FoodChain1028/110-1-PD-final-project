@@ -30,10 +30,19 @@ int main()
         Init Textures
     //===========================================================*/
     Texture playerTex;
-    playerTex.loadFromFile("textures/spaceship.png");
+    playerTex.loadFromFile("textures/FinnAdventureTime.png");
 
     Texture humanBossTex;
-    humanBossTex.loadFromFile("textures/Boss1.png");
+    humanBossTex.loadFromFile("textures/JAKE_THE_DOG.png"); // my add
+
+    Texture monster2Tex;
+    monster2Tex.loadFromFile("textures/Original_Ice_King.png"); // my add
+
+    Texture longLineEneTex;
+    longLineEneTex.loadFromFile("textures/longLineEne.png"); // my add
+
+    Texture bumbPrincessTex;
+    bumbPrincessTex.loadFromFile("textures/bumbPrincess.png");
 
     Texture earthBossTex;
     earthBossTex.loadFromFile("textures/Boss2.png");
@@ -78,11 +87,11 @@ int main()
     Player player(&playerTex);
     int shootTimer = 20;
 
-    // for hp Åã¥Ü
+    // for hp ???
     RectangleShape hpBar;
     hpBar.setFillColor(Color::Red);
 
-    // for mp Åã¥Ü
+    // for mp ???
     RectangleShape mpBar;
     mpBar.setFillColor(Color::Blue);
 
@@ -90,8 +99,18 @@ int main()
     /*===========================================================//
          Boss init
     //===========================================================*/
-    Boss weirdFace(&humanBossTex);
-    weirdFace.shape.setPosition(window.getSize().x / 2, window.getSize().y / 2);
+
+    Boss enemy1(& monster2Tex);
+    enemy1.shape.setPosition(window.getSize().x / 2, window.getSize().y / 2);
+    Boss enemy2(& humanBossTex);
+    enemy2.shape.setPosition(window.getSize().x / 3, window.getSize().y / 3);
+    Boss enemy3(&bumbPrincessTex);
+    enemy3.shape.setPosition(window.getSize().x / 4, window.getSize().y / 4);
+
+    vector<Boss> enemies;
+    enemies.push_back(Boss(enemy1));
+    enemies.push_back(Boss(enemy2));
+    enemies.push_back(Boss(enemy3));
 
     int bShootTimer = 15;
 
@@ -100,17 +119,22 @@ int main()
     wHpText.setCharacterSize(12);
     wHpText.setFillColor(Color::White);
 
-    RectangleShape bHpBar;
-    bHpBar.setFillColor(Color::Red);
+    for (int i = 0; i < enemies.size(); i++)
+    {
+        enemies[i].bHpBar.setFillColor(Color::Red);
+    }
 
     /*===========================================================//
          Bullet init
     //===========================================================*/
-    Bullet b1(&bulletTex);
-    Bullet b2(&bossBulletTex);
-    vector<Bullet> pBullets;
-    vector<Bullet> bBullets;
     
+    Bullet b1(& bulletTex);
+    Bullet b2(& bossBulletTex);
+    
+    vector<Bullet> pBullets; // player's bullet
+    vector<Bullet> bBullets; // enemies' bullet
+    
+
     Vector2f playerCenter;
     Vector2f mousePosWindow;
     Vector2f aimDir;
@@ -120,7 +144,7 @@ int main()
     Vector2f bossCenter;
     Vector2f bAimDir;
     Vector2f bAimDirNorm;
-   
+
     //cout << aimDirNorm.x << " " << aimDirNorm.y << endl;
 
 
@@ -139,10 +163,19 @@ int main()
                 window.close();
         }
 
-        if (player.HP >= 0 && weirdFace.HP >= 0)
+
+        // check if all enemies are dead
+        bool notAllEnemiesDie = 0;
+        for (int i = 0; i < enemies.size(); i++)
+        {
+            if (enemies[i].HP >= 0)
+                notAllEnemiesDie = 1;    
+        }
+
+        if (player.HP >= 0 && notAllEnemiesDie)
         {
             /*===========================================================//
-               ¡iUpdate¡j player
+               ?iUpdate?j player
             //===========================================================*/
             // movement
 
@@ -167,8 +200,6 @@ int main()
                 player.shape.setPosition(player.shape.getPosition().x, window.getSize().y - player.shape.getGlobalBounds().height);
 
             // hp & mp Bars and Text set
-
-
             hpBar.setPosition(player.shape.getPosition().x + 10, player.shape.getPosition().y - 25.f);
             mpBar.setPosition(player.shape.getPosition().x + 9, player.shape.getPosition().y - 15.f);
 
@@ -176,21 +207,30 @@ int main()
             // HP & MP set
 
             /*===========================================================//
-                Update¡j controls
+                Update?j controls
             //===========================================================*/
-           
+
             if (shootTimer < 20)
                 shootTimer++;
 
 
             /*===========================================================//
-                ¡iUpdate¡j Bullet
+                ?iUpdate?j Bullet
             //===========================================================*/
             playerCenter = Vector2f(player.shape.getPosition().x + 100.f, player.shape.getPosition().y - 15.f);
             mousePosWindow = Vector2f(Mouse::getPosition(window));
             aimDir = mousePosWindow - playerCenter;
             aimDirNorm = Vector2f(aimDir.x / sqrt(pow(aimDir.x, 2) + pow(aimDir.y, 2)), aimDir.y / sqrt(pow(aimDir.x, 2) + pow(aimDir.y, 2)));
-            
+
+            //if (Keyboard::isKeyPressed(Keyboard::K) && shootTimer >= 20)
+            //{
+            //    b1.shape.setPosition(playerCenter);
+            //    b1.currVelocity = aimDirNorm;
+            //    pBullets.push_back(Bullet(b1));
+
+            //    shootTimer = 0;
+            //}
+
             if (Mouse::isButtonPressed(Mouse::Left) && shootTimer >= 20)
             {
                 b1.shape.setPosition(playerCenter);
@@ -199,11 +239,11 @@ int main()
 
                 shootTimer = 0; // reset timer
             }
-          
+
 
             for (size_t i = 0; i < pBullets.size(); i++)
             {
-                
+
                 pBullets[i].shape.move(pBullets[i].currVelocity);
 
                 //Out of bounds
@@ -216,105 +256,206 @@ int main()
 
                 else
                 {
-                    //Enemy collision
-
-                    if (pBullets[i].shape.getGlobalBounds().intersects(weirdFace.shape.getGlobalBounds()))
+                    //Enemy and bullet collision
+                    if (!enemies.empty() and !pBullets.empty())
                     {
-                        if (weirdFace.HP < 1)
+                        for (int i = 0; i < pBullets.size(); i++)
                         {
-                            weirdFace.shape.setTexture(deadHumanBossTex);
-                           
+                            for (int j = 0; j < enemies.size(); j++)
+                            {
+                                if (pBullets[i].shape.getGlobalBounds().intersects(enemies[j].shape.getGlobalBounds()))
+                                {
+                                    if (enemies[j].HP < 1)
+                                    {
+                                        enemies[j].shape.setTexture(deadHumanBossTex);
+                                        enemies.erase(enemies.begin() + j);
+                                    }
+
+                                    else
+                                        enemies[j].HP -= 5.3;
+
+                                    pBullets.erase(pBullets.begin() + i);
+                                    break;
+                                }
+                            }
                         }
-
-                        else
-                            weirdFace.HP -= 5.3;
-
-
-                        pBullets.erase(pBullets.begin() + i);
-
                     }
+
+
+                    //if (pBullets[i].shape.getGlobalBounds().intersects(weirdFace.shape.getGlobalBounds()))
+                    //{
+                    //    if (weirdFace.HP < 1)
+                    //    {
+                    //        weirdFace.shape.setTexture(deadHumanBossTex);
+
+                    //    }
+
+                    //    else
+                    //        weirdFace.HP -= 5.3;
+
+
+                    //    pBullets.erase(pBullets.begin() + i);
+
+                    //}
+
                 }
             }
 
-            
-                
-            
+
+
+
 
             /*===========================================================//
-                 ¡iUpdate¡j Enemy
+                 ?iUpdate?j Enemy
             //===========================================================*/
-
+            
             // Enemy bullets
-            Vector2f bossCenter = Vector2f(weirdFace.shape.getPosition().x + 100.f, weirdFace.shape.getPosition().y + 100.f);
-            bAimDir = playerCenter - bossCenter;
-            Vector2f bAimDirNorm = Vector2f(bAimDir.x / sqrt(pow(bAimDir.x, 2) + pow(bAimDir.y, 2)), bAimDir.y / sqrt(pow(bAimDir.x, 2) + pow(bAimDir.y, 2)));
-
-            if (bShootTimer >= 15)
+            for (int i = 0; i < enemies.size(); i++)
             {
-                b2.shape.setPosition(bossCenter);
-                b2.currVelocity = bAimDirNorm;
-                bBullets.push_back(Bullet(b2));
-                
-                bShootTimer = 0; // reset timer
-                weirdFace.shape.move(bAimDirNorm * 10.f);
+                Vector2f bossCenter = Vector2f(enemies[i].shape.getPosition().x + 100.f, enemies[i].shape.getPosition().y + 100.f);
+                bAimDir = playerCenter - bossCenter;
+                enemies[i].bAimDirNorm = Vector2f(bAimDir.x / sqrt(pow(bAimDir.x, 2) + pow(bAimDir.y, 2)), bAimDir.y / sqrt(pow(bAimDir.x, 2) + pow(bAimDir.y, 2)));
             }
 
+           if (bShootTimer >= 15)
+           {
+               for (int i = 0; i < enemies.size(); i++)
+               {
+                   b2.shape.setPosition(bossCenter);
+                   b2.currVelocity = bAimDirNorm;
+                   bBullets.push_back(Bullet(b2));
+
+                   bShootTimer = 0; // reset timer
+                   enemies[i].shape.move(enemies[i].bAimDirNorm * 10.f);
+               }
+ 
+           }
+
             else
-                bShootTimer++;
+              bShootTimer++;
 
             for (size_t i = 0; i < bBullets.size(); i++)
-            {
+                {
 
-                bBullets[i].shape.move(bBullets[i].currVelocity);
+                    bBullets[i].shape.move(bBullets[i].currVelocity);
 
-                //Out of bounds
-                if (bBullets[i].shape.getPosition().x < 0 || bBullets[i].shape.getPosition().x > window.getSize().x
+                    //Out of bounds
+                    if (bBullets[i].shape.getPosition().x < 0 || bBullets[i].shape.getPosition().x > window.getSize().x
                     || bBullets[i].shape.getPosition().y < 0 || bBullets[i].shape.getPosition().y > window.getSize().y)
-                {
-                    bBullets.erase(bBullets.begin() + i);
-
-                }
-
-                else
-                {
-                    //Enemy collision
-
-                    if (bBullets[i].shape.getGlobalBounds().intersects(player.shape.getGlobalBounds()))
                     {
-                        player.HP -= 0.7;
                         bBullets.erase(bBullets.begin() + i);
 
                     }
+
+                    else
+                    {
+                        //Enemy collision
+
+                        if (bBullets[i].shape.getGlobalBounds().intersects(player.shape.getGlobalBounds()))
+                        {
+                            player.HP -= 0.7;
+                            bBullets.erase(bBullets.begin() + i);
+
+                        }
+                    }
+                }
+
+                // for enemy collision with player
+
+            for (int i = 0; i < enemies.size(); i++)
+            {
+                if (enemies[i].shape.getGlobalBounds().intersects(player.shape.getGlobalBounds()))
+                {
+                    player.HP -= 1.5;
+                    player.shape.move(bAimDirNorm * 150.f);
                 }
             }
 
-            // for enemy collision with player
-            if (weirdFace.shape.getGlobalBounds().intersects(player.shape.getGlobalBounds()))
-            {
-                player.HP -= 1.5;
-                player.shape.move(bAimDirNorm * 150.f);
+                for (int i = 0; i < enemies.size(); i++)
+                {
+                    enemies[i].bHpBar.setPosition(enemies[i].shape.getPosition().x + 5.f, enemies[i].shape.getPosition().y - 25.f);
+                }
+
+                //bHpBar.setPosition(enemies[i].shape.getPosition().x + 5.f, enemies[i].shape.getPosition().y - 25.f);
+
             }
-                
-            
-            bHpBar.setPosition(weirdFace.shape.getPosition().x + 5.f, weirdFace.shape.getPosition().y - 25.f);
+
+
+
+            //// Enemy bullets
+            //Vector2f bossCenter = Vector2f(weirdFace.shape.getPosition().x + 100.f, weirdFace.shape.getPosition().y + 100.f);
+            //bAimDir = playerCenter - bossCenter;
+            //Vector2f bAimDirNorm = Vector2f(bAimDir.x / sqrt(pow(bAimDir.x, 2) + pow(bAimDir.y, 2)), bAimDir.y / sqrt(pow(bAimDir.x, 2) + pow(bAimDir.y, 2)));
+
+            //if (bShootTimer >= 15)
+            //{
+            //    b2.shape.setPosition(bossCenter);
+            //    b2.currVelocity = bAimDirNorm;
+            //    bBullets.push_back(Bullet(b2));
+
+            //    bShootTimer = 0; // reset timer
+            //    weirdFace.shape.move(bAimDirNorm * 10.f);
+            //}
+
+            //else
+            //    bShootTimer++;
+
+            //for (size_t i = 0; i < bBullets.size(); i++)
+            //{
+
+            //    bBullets[i].shape.move(bBullets[i].currVelocity);
+
+            //    //Out of bounds
+            //    if (bBullets[i].shape.getPosition().x < 0 || bBullets[i].shape.getPosition().x > window.getSize().x
+            //        || bBullets[i].shape.getPosition().y < 0 || bBullets[i].shape.getPosition().y > window.getSize().y)
+            //    {
+            //        bBullets.erase(bBullets.begin() + i);
+
+            //    }
+
+            //    else
+            //    {
+            //        //Enemy collision
+
+            //        if (bBullets[i].shape.getGlobalBounds().intersects(player.shape.getGlobalBounds()))
+            //        {
+            //            player.HP -= 0.7;
+            //            bBullets.erase(bBullets.begin() + i);
+
+            //        }
+            //    }
+            //}
+
+            //// for enemy collision with player
+            //if (weirdFace.shape.getGlobalBounds().intersects(player.shape.getGlobalBounds()))
+            //{
+            //    player.HP -= 1.5;
+            //    player.shape.move(bAimDirNorm * 150.f);
+            //}
+
+
+            //bHpBar.setPosition(weirdFace.shape.getPosition().x + 5.f, weirdFace.shape.getPosition().y - 25.f);
 
             /*===========================================================//
-               ¡iUpdate¡j UI
+               ?iUpdate?j UI
             //===========================================================*/
             hpBar.setSize(Vector2f((float)player.HP * 0.45f, 10.f));
             mpBar.setSize(Vector2f((float)player.MP * 0.45f, 10.f));
 
-            bHpBar.setSize(Vector2f((float)weirdFace.HP * 0.45f, 10.f));
-
-        }
+            for (int i = 0; i < enemies.size(); i++)
+            {
+                enemies[i].bHpBar.setSize(Vector2f((float)enemies[i].HP * 0.45f, 10.f));
+            }
 
         
+
+
         /*===========================================================//
-            ¡iDraw¡j
+            ?iDraw?j
         //===========================================================*/
         window.clear();
         /*===========================================================//
-            ¡iDraw¡j  player
+            ?iDraw?j  player
         //===========================================================*/
         window.draw(player.shape);
         window.draw(hpBar);
@@ -322,7 +463,7 @@ int main()
 
 
         /*===========================================================//
-            ¡iDraw¡j bullets
+            ?iDraw?j bullets
         //===========================================================*/
         for (size_t i = 0; i < pBullets.size(); i++)
         {
@@ -337,25 +478,40 @@ int main()
 
 
         /*===========================================================//
-            ¡iDraw¡j Boss
+            ?iDraw?j Boss
         //===========================================================*/
-        window.draw(weirdFace.shape);
-        window.draw(bHpBar);
+        for (int i = 0; i < enemies.size(); i++)
+        {
+            window.draw(enemies[i].bHpBar);
+        }
+
+        //window.draw(bHpBar);
+
+        for (int i = 0; i < enemies.size(); i++)
+        {
+            window.draw(enemies[i].shape);
+        }
+
+        for (int i = 0; i < bBullets.size(); i++)
+        {
+            window.draw(bBullets[i].shape);
+        }
 
         /*===========================================================//
-             ¡iDraw¡j UI
+             ?iDraw?j UI
         //===========================================================*/
         if (player.HP <= 0)
         {
             window.draw(gameOverText);
         }
+        
 
-        if (weirdFace.HP <= 0)
+        if (!notAllEnemiesDie)
         {
             window.draw(youWin);
         }
 
-        
+
         window.draw(player.shape);
         window.display();
 
