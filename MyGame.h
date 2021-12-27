@@ -65,10 +65,12 @@ public:
     int HP;
     int HPMax;
     RectangleShape bHpBar;
-    Vector2f bAimDirNorm;
 
     vector<Bullet> bullets;
     Vector2f currVelocity;
+    Vector2f bAimDirNorm;
+    Vector2f bossCenter;
+    Vector2f bAimDir;
 
     Boss(Texture* texture);
     ~Boss() {}
