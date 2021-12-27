@@ -3,9 +3,8 @@
 
 using namespace std;
 using namespace sf;
-/*
-	遊戲所需要的 class 宣告
-*/
+
+
 
 class Bullet
 {
@@ -26,7 +25,7 @@ public:
     Sprite shape;
 
     Shield(Texture* texture, Vector2f pos);
-    ~Shield(){}
+    ~Shield() {}
 
 };
 
@@ -52,7 +51,7 @@ public:
 
     // for shield 
     vector<Shield> shield;
-    
+
     Player(Texture* texture);
     ~Player() {}
 
@@ -65,6 +64,8 @@ public:
 
     int HP;
     int HPMax;
+    RectangleShape bHpBar;
+    Vector2f bAimDirNorm;
 
     vector<Bullet> bullets;
     Vector2f currVelocity;
