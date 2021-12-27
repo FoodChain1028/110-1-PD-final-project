@@ -392,31 +392,7 @@ int main()
                    }
                }
            }
-            //for (size_t j = 0; j < enemies[i].bullets.size(); j++)
-            //{
-
-            //        enemies[i].bullets[j].shape.move(enemies[i].bullets[i].currVelocity);
-
-            //        //Out of bounds
-            //        if (bBullets[i].shape.getPosition().x < 0 || bBullets[i].shape.getPosition().x > window.getSize().x
-            //        || bBullets[i].shape.getPosition().y < 0 || bBullets[i].shape.getPosition().y > window.getSize().y)
-            //        {
-            //            bBullets.erase(bBullets.begin() + i);
-
-            //        }
-
-            //        else
-            //        {
-            //            //Enemy collision
-
-            //            if (bBullets[i].shape.getGlobalBounds().intersects(player.shape.getGlobalBounds()))
-            //            {
-            //                player.HP -= 0.7;
-            //                bBullets.erase(bBullets.begin() + i);
-
-            //            }
-            //        }
-            //    }
+            
 
                 // for enemy collision with player
 
@@ -437,63 +413,6 @@ int main()
                 //bHpBar.setPosition(enemies[i].shape.getPosition().x + 5.f, enemies[i].shape.getPosition().y - 25.f);
 
             }
-
-
-
-            //// Enemy bullets
-            //Vector2f bossCenter = Vector2f(weirdFace.shape.getPosition().x + 100.f, weirdFace.shape.getPosition().y + 100.f);
-            //bAimDir = playerCenter - bossCenter;
-            //Vector2f bAimDirNorm = Vector2f(bAimDir.x / sqrt(pow(bAimDir.x, 2) + pow(bAimDir.y, 2)), bAimDir.y / sqrt(pow(bAimDir.x, 2) + pow(bAimDir.y, 2)));
-
-            //if (bShootTimer >= 15)
-            //{
-            //    b2.shape.setPosition(bossCenter);
-            //    b2.currVelocity = bAimDirNorm;
-            //    bBullets.push_back(Bullet(b2));
-
-            //    bShootTimer = 0; // reset timer
-            //    weirdFace.shape.move(bAimDirNorm * 10.f);
-            //}
-
-            //else
-            //    bShootTimer++;
-
-            //for (size_t i = 0; i < bBullets.size(); i++)
-            //{
-
-            //    bBullets[i].shape.move(bBullets[i].currVelocity);
-
-            //    //Out of bounds
-            //    if (bBullets[i].shape.getPosition().x < 0 || bBullets[i].shape.getPosition().x > window.getSize().x
-            //        || bBullets[i].shape.getPosition().y < 0 || bBullets[i].shape.getPosition().y > window.getSize().y)
-            //    {
-            //        bBullets.erase(bBullets.begin() + i);
-
-            //    }
-
-            //    else
-            //    {
-            //        //Enemy collision
-
-            //        if (bBullets[i].shape.getGlobalBounds().intersects(player.shape.getGlobalBounds()))
-            //        {
-            //            player.HP -= 0.7;
-            //            bBullets.erase(bBullets.begin() + i);
-
-            //        }
-            //    }
-            //}
-
-            //// for enemy collision with player
-            //if (weirdFace.shape.getGlobalBounds().intersects(player.shape.getGlobalBounds()))
-            //{
-            //    player.HP -= 1.5;
-            //    player.shape.move(bAimDirNorm * 150.f);
-            //}
-
-
-            //bHpBar.setPosition(weirdFace.shape.getPosition().x + 5.f, weirdFace.shape.getPosition().y - 25.f);
-
             /*===========================================================//
                ?iUpdate?j UI
             //===========================================================*/
