@@ -394,7 +394,7 @@ int main()
            }
 
 
-           //ÃL·ì
+           //ÃƒLÂ·Ã¬
        
            for (int i = 0; i < enemies.size(); i++)
            {
@@ -403,8 +403,8 @@ int main()
                        if (enemies[i].shape.getGlobalBounds().intersects(enemies[j].shape.getGlobalBounds()) && i != j)
                        {
                            Vector2f vec = enemies[i].shape.getPosition() - enemies[j].shape.getPosition();
-                           enemies[i].shape.move(vec);
-                           enemies[j].shape.move(vec * -1.f);
+                           enemies[i].shape.move(vec * 0.3f);
+                           enemies[j].shape.move(vec * -0.3f);
                        }
                    }
            }
