@@ -1,4 +1,7 @@
 # 110-1-PD-final-project
+# 共享 
+- https://docs.google.com/presentation/d/1xS-cFDJh_1Q4CgrMw3g7lAOI9txzkNMWjj6nqkmBQY0/edit?usp=sharing
+- https://docs.google.com/document/d/1nE2M6wHJQOK0zNP_I8N7YKRDpVdma_v1AoG8exTwSmc/edit?usp=sharing
 # Deadline
 - 1/9 前透過指定連結表達口頭報告意願
 - 1/11 或是 1/13 口頭報告 (必自行準備轉接頭)
