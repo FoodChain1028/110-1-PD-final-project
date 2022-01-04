@@ -1,0 +1,82 @@
+﻿  enemies.cpp
+C:\Users\Debbie Huang\Desktop\SFML_setup\SFML_setup\enemies.cpp(18,15): warning C4244: '引數': 將 'time_t' 轉換為 'unsigned int'，由於類型不同，可能導致資料遺失
+C:\Users\Debbie Huang\Desktop\SFML_setup\SFML_setup\enemies.cpp(70,56): warning C4244: '引數': 將 'T' 轉換為 'float'，由於類型不同，可能導致資料遺失
+          with
+          [
+              T=unsigned int
+          ]
+C:\Users\Debbie Huang\Desktop\SFML_setup\SFML_setup\enemies.cpp(77,50): warning C4244: '引數': 將 'T' 轉換為 'float'，由於類型不同，可能導致資料遺失
+          with
+          [
+              T=unsigned int
+          ]
+C:\Users\Debbie Huang\Desktop\SFML_setup\SFML_setup\enemies.cpp(104,73): warning C4244: '引數': 將 'T' 轉換為 'float'，由於類型不同，可能導致資料遺失
+          with
+          [
+              T=unsigned int
+          ]
+C:\Users\Debbie Huang\Desktop\SFML_setup\SFML_setup\enemies.cpp(104,49): warning C4244: '引數': 將 'T' 轉換為 'float'，由於類型不同，可能導致資料遺失
+          with
+          [
+              T=unsigned int
+          ]
+C:\Users\Debbie Huang\Desktop\SFML_setup\SFML_setup\enemies.cpp(106,73): warning C4244: '引數': 將 'T' 轉換為 'float'，由於類型不同，可能導致資料遺失
+          with
+          [
+              T=unsigned int
+          ]
+C:\Users\Debbie Huang\Desktop\SFML_setup\SFML_setup\enemies.cpp(106,49): warning C4244: '引數': 將 'T' 轉換為 'float'，由於類型不同，可能導致資料遺失
+          with
+          [
+              T=unsigned int
+          ]
+C:\Users\Debbie Huang\Desktop\SFML_setup\SFML_setup\enemies.cpp(108,73): warning C4244: '引數': 將 'T' 轉換為 'float'，由於類型不同，可能導致資料遺失
+          with
+          [
+              T=unsigned int
+          ]
+C:\Users\Debbie Huang\Desktop\SFML_setup\SFML_setup\enemies.cpp(108,49): warning C4244: '引數': 將 'T' 轉換為 'float'，由於類型不同，可能導致資料遺失
+          with
+          [
+              T=unsigned int
+          ]
+C:\Users\Debbie Huang\Desktop\SFML_setup\SFML_setup\enemies.cpp(122,23): warning C4018: '<': signed/unsigned 不相符
+C:\Users\Debbie Huang\Desktop\SFML_setup\SFML_setup\enemies.cpp(136,23): warning C4018: '<': signed/unsigned 不相符
+C:\Users\Debbie Huang\Desktop\SFML_setup\SFML_setup\enemies.cpp(173,27): warning C4018: '<': signed/unsigned 不相符
+C:\Users\Debbie Huang\Desktop\SFML_setup\SFML_setup\enemies.cpp(227,98): warning C4244: '引數': 將 'double' 轉換為 'T'，由於類型不同，可能導致資料遺失
+          with
+          [
+              T=float
+          ]
+C:\Users\Debbie Huang\Desktop\SFML_setup\SFML_setup\enemies.cpp(227,44): warning C4244: '引數': 將 'double' 轉換為 'T'，由於類型不同，可能導致資料遺失
+          with
+          [
+              T=float
+          ]
+C:\Users\Debbie Huang\Desktop\SFML_setup\SFML_setup\enemies.cpp(266,43): warning C4018: '<': signed/unsigned 不相符
+C:\Users\Debbie Huang\Desktop\SFML_setup\SFML_setup\enemies.cpp(268,47): warning C4018: '<': signed/unsigned 不相符
+C:\Users\Debbie Huang\Desktop\SFML_setup\SFML_setup\enemies.cpp(279,58): warning C4244: '-=': 將 'double' 轉換為 'int'，由於類型不同，可能導致資料遺失
+C:\Users\Debbie Huang\Desktop\SFML_setup\SFML_setup\enemies.cpp(317,31): warning C4018: '<': signed/unsigned 不相符
+C:\Users\Debbie Huang\Desktop\SFML_setup\SFML_setup\enemies.cpp(321,162): warning C4244: '引數': 將 'double' 轉換為 'T'，由於類型不同，可能導致資料遺失
+          with
+          [
+              T=float
+          ]
+C:\Users\Debbie Huang\Desktop\SFML_setup\SFML_setup\enemies.cpp(321,72): warning C4244: '引數': 將 'double' 轉換為 'T'，由於類型不同，可能導致資料遺失
+          with
+          [
+              T=float
+          ]
+C:\Users\Debbie Huang\Desktop\SFML_setup\SFML_setup\enemies.cpp(326,34): warning C4018: '<': signed/unsigned 不相符
+C:\Users\Debbie Huang\Desktop\SFML_setup\SFML_setup\enemies.cpp(341,30): warning C4018: '<': signed/unsigned 不相符
+C:\Users\Debbie Huang\Desktop\SFML_setup\SFML_setup\enemies.cpp(362,41): warning C4244: '-=': 將 'double' 轉換為 'int'，由於類型不同，可能導致資料遺失
+C:\Users\Debbie Huang\Desktop\SFML_setup\SFML_setup\enemies.cpp(388,41): warning C4244: '-=': 將 'double' 轉換為 'int'，由於類型不同，可能導致資料遺失
+C:\Users\Debbie Huang\Desktop\SFML_setup\SFML_setup\enemies.cpp(423,31): warning C4018: '<': signed/unsigned 不相符
+C:\Users\Debbie Huang\Desktop\SFML_setup\SFML_setup\enemies.cpp(427,34): warning C4244: '-=': 將 'double' 轉換為 'int'，由於類型不同，可能導致資料遺失
+C:\Users\Debbie Huang\Desktop\SFML_setup\SFML_setup\enemies.cpp(432,35): warning C4018: '<': signed/unsigned 不相符
+C:\Users\Debbie Huang\Desktop\SFML_setup\SFML_setup\enemies.cpp(503,31): warning C4018: '<': signed/unsigned 不相符
+C:\Users\Debbie Huang\Desktop\SFML_setup\SFML_setup\enemies.cpp(531,27): warning C4018: '<': signed/unsigned 不相符
+C:\Users\Debbie Huang\Desktop\SFML_setup\SFML_setup\enemies.cpp(533,31): warning C4018: '<': signed/unsigned 不相符
+C:\Users\Debbie Huang\Desktop\SFML_setup\SFML_setup\enemies.cpp(544,27): warning C4018: '<': signed/unsigned 不相符
+C:\Users\Debbie Huang\Desktop\SFML_setup\SFML_setup\enemies.cpp(551,27): warning C4018: '<': signed/unsigned 不相符
+  SFML_setup.vcxproj -> C:\Users\Debbie Huang\Desktop\SFML_setup\Debug\SFML_setup.exe

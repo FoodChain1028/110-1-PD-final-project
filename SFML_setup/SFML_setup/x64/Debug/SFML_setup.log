@@ -1,0 +1,2 @@
+﻿  Main.cpp
+C:\Users\Debbie Huang\Desktop\SFML_setup\SFML_setup\Main.cpp(1,10): fatal error C1083: 無法開啟包含檔案: 'SFML/Graphics.hpp': No such file or directory
