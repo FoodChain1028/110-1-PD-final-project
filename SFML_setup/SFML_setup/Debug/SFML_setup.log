@@ -71,12 +71,14 @@ C:\Users\Debbie Huang\Desktop\SFML_setup\SFML_setup\enemies.cpp(326,34): warning
 C:\Users\Debbie Huang\Desktop\SFML_setup\SFML_setup\enemies.cpp(341,30): warning C4018: '<': signed/unsigned 不相符
 C:\Users\Debbie Huang\Desktop\SFML_setup\SFML_setup\enemies.cpp(362,41): warning C4244: '-=': 將 'double' 轉換為 'int'，由於類型不同，可能導致資料遺失
 C:\Users\Debbie Huang\Desktop\SFML_setup\SFML_setup\enemies.cpp(388,41): warning C4244: '-=': 將 'double' 轉換為 'int'，由於類型不同，可能導致資料遺失
-C:\Users\Debbie Huang\Desktop\SFML_setup\SFML_setup\enemies.cpp(423,31): warning C4018: '<': signed/unsigned 不相符
-C:\Users\Debbie Huang\Desktop\SFML_setup\SFML_setup\enemies.cpp(427,34): warning C4244: '-=': 將 'double' 轉換為 'int'，由於類型不同，可能導致資料遺失
-C:\Users\Debbie Huang\Desktop\SFML_setup\SFML_setup\enemies.cpp(432,35): warning C4018: '<': signed/unsigned 不相符
-C:\Users\Debbie Huang\Desktop\SFML_setup\SFML_setup\enemies.cpp(503,31): warning C4018: '<': signed/unsigned 不相符
-C:\Users\Debbie Huang\Desktop\SFML_setup\SFML_setup\enemies.cpp(531,27): warning C4018: '<': signed/unsigned 不相符
-C:\Users\Debbie Huang\Desktop\SFML_setup\SFML_setup\enemies.cpp(533,31): warning C4018: '<': signed/unsigned 不相符
-C:\Users\Debbie Huang\Desktop\SFML_setup\SFML_setup\enemies.cpp(544,27): warning C4018: '<': signed/unsigned 不相符
-C:\Users\Debbie Huang\Desktop\SFML_setup\SFML_setup\enemies.cpp(551,27): warning C4018: '<': signed/unsigned 不相符
+C:\Users\Debbie Huang\Desktop\SFML_setup\SFML_setup\enemies.cpp(399,30): warning C4018: '<': signed/unsigned 不相符
+C:\Users\Debbie Huang\Desktop\SFML_setup\SFML_setup\enemies.cpp(401,38): warning C4018: '<': signed/unsigned 不相符
+C:\Users\Debbie Huang\Desktop\SFML_setup\SFML_setup\enemies.cpp(439,31): warning C4018: '<': signed/unsigned 不相符
+C:\Users\Debbie Huang\Desktop\SFML_setup\SFML_setup\enemies.cpp(443,34): warning C4244: '-=': 將 'double' 轉換為 'int'，由於類型不同，可能導致資料遺失
+C:\Users\Debbie Huang\Desktop\SFML_setup\SFML_setup\enemies.cpp(448,35): warning C4018: '<': signed/unsigned 不相符
+C:\Users\Debbie Huang\Desktop\SFML_setup\SFML_setup\enemies.cpp(519,31): warning C4018: '<': signed/unsigned 不相符
+C:\Users\Debbie Huang\Desktop\SFML_setup\SFML_setup\enemies.cpp(547,27): warning C4018: '<': signed/unsigned 不相符
+C:\Users\Debbie Huang\Desktop\SFML_setup\SFML_setup\enemies.cpp(549,31): warning C4018: '<': signed/unsigned 不相符
+C:\Users\Debbie Huang\Desktop\SFML_setup\SFML_setup\enemies.cpp(560,27): warning C4018: '<': signed/unsigned 不相符
+C:\Users\Debbie Huang\Desktop\SFML_setup\SFML_setup\enemies.cpp(567,27): warning C4018: '<': signed/unsigned 不相符
   SFML_setup.vcxproj -> C:\Users\Debbie Huang\Desktop\SFML_setup\Debug\SFML_setup.exe

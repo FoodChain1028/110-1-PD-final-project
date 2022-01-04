@@ -392,6 +392,22 @@ int main()
                    }
                }
            }
+
+
+           //ÃL·ì
+       
+           for (int i = 0; i < enemies.size(); i++)
+           {
+                   for (int j = 0; j < enemies.size(); j++)
+                   {
+                       if (enemies[i].shape.getGlobalBounds().intersects(enemies[j].shape.getGlobalBounds()) && i != j)
+                       {
+                           Vector2f vec = enemies[i].shape.getPosition() - enemies[j].shape.getPosition();
+                           enemies[i].shape.move(vec);
+                           enemies[j].shape.move(vec * -1.f);
+                       }
+                   }
+           }
             //for (size_t j = 0; j < enemies[i].bullets.size(); j++)
             //{
 
