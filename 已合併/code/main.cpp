@@ -34,7 +34,7 @@ int main()
         Init Textures
     //===========================================================*/
     Texture playerTex;
-    playerTex.loadFromFile("textures/player.png");
+    playerTex.loadFromFile("textures/FinnAdventureTime.png");
 
     Texture bigBirdTex;
     bigBirdTex.loadFromFile("textures/big_bird.png"); // my add
