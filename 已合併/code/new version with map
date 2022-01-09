@@ -14,7 +14,8 @@ using namespace sf;
 
 int main()
 
-{
+{   
+    int z = 1;
     srand(time(NULL));
     clock_t start, stop;
     start = time(NULL);
@@ -185,21 +186,21 @@ int main()
     // gun
     Texture normalgunTex;
     normalgunTex.loadFromFile("textures/gun.png");
-    Weapon normalgun(normalgunTex, 200.0, 1);
+    Weapon normalgun(normalgunTex, rolldice(), 1);
     guns.push_back(normalgun);
     havegun.push_back(false);
     gunbulletcnt.push_back(100);
     // machine gun
     Texture machinegunTex;
     machinegunTex.loadFromFile("textures/machinegun.png");
-    Weapon machinegun(machinegunTex, 400.0, 2);
+    Weapon machinegun(machinegunTex, rolldice() , 2);
     guns.push_back(machinegun);
     havegun.push_back(false);
     gunbulletcnt.push_back(100);
     // shotgun
     Texture shotgunTex;
     shotgunTex.loadFromFile("textures/shotgun.png");
-    Weapon shotgun(shotgunTex, 800.0, 3);
+    Weapon shotgun(shotgunTex, rolldice(), 3);
     guns.push_back(shotgun);
     havegun.push_back(false);
     gunbulletcnt.push_back(100);
@@ -590,7 +591,35 @@ int main()
                     }
                 }
             }
-
+            if (guns.size() < 3)
+            {   
+                // gun
+                if (z % 3 == 1)
+                {
+                    Weapon normalgun(normalgunTex, rolldice(), 1);
+                    guns.push_back(normalgun);
+                    havegun.push_back(false);
+                    gunbulletcnt.push_back(100);
+                }
+                // machine gun
+                else if (z % 3 == 2)
+                {
+                    Weapon machinegun(machinegunTex, rolldice(), 2);
+                    guns.push_back(machinegun);
+                    havegun.push_back(false);
+                    gunbulletcnt.push_back(100);
+                }
+                // shotgun
+                else if (z % 3 == 0)
+                {
+                    Weapon shotgun(shotgunTex, rolldice(), 3);
+                    guns.push_back(shotgun);
+                    havegun.push_back(false);
+                    gunbulletcnt.push_back(100);
+                }
+                z++;
+                z %= 3;
+            }
 
 
             // medical kit
