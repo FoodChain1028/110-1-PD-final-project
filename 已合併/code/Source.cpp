@@ -32,19 +32,25 @@ int main()
         Init Textures
     //===========================================================*/
     Texture playerTex;
-    playerTex.loadFromFile("textures/FinnAdventureTime.png");
+    playerTex.loadFromFile("textures/player.png");
 
     Texture humanBossTex;
-    humanBossTex.loadFromFile("textures/JAKE_THE_DOG.png"); // my add
+    humanBossTex.loadFromFile("textures/big_bird.png"); // my add
 
     Texture monster2Tex;
-    monster2Tex.loadFromFile("textures/Original_Ice_King.png"); // my add
+    monster2Tex.loadFromFile("textures/principal.png"); // my add
 
     Texture longLineEneTex;
-    longLineEneTex.loadFromFile("textures/longLineEne.png"); // my add
+    longLineEneTex.loadFromFile("textures/cow.png"); // my add
 
     Texture bumbPrincessTex;
-    bumbPrincessTex.loadFromFile("textures/bumbPrincess.png");
+    bumbPrincessTex.loadFromFile("textures/duck.png");
+
+    Texture owlTex;
+    owlTex.loadFromFile("textures/owl.png");
+
+    Texture squirrelTex;
+    squirrelTex.loadFromFile("textures/squirrel.png");
 
     Texture earthBossTex;
     earthBossTex.loadFromFile("textures/Boss2.png");
@@ -102,17 +108,23 @@ int main()
          Boss init
     //===========================================================*/
 
-    Boss enemy1(&monster2Tex);
+    Boss enemy1(& monster2Tex);
     enemy1.shape.setPosition(window.getSize().x / 2, window.getSize().y / 2);
-    Boss enemy2(&humanBossTex);
+    Boss enemy2(& humanBossTex);
     enemy2.shape.setPosition(window.getSize().x / 3, window.getSize().y / 3);
+    enemy2.shape.setScale(Vector2f(0.8f, 0.8f));
     Boss enemy3(&bumbPrincessTex);
     enemy3.shape.setPosition(window.getSize().x / 4, window.getSize().y / 4);
-
+    enemy3.shape.setScale(Vector2f(0.3f, 0.3f));
+    Boss enemy4(&longLineEneTex);
+    enemy4.shape.setPosition(window.getSize().x / 5, window.getSize().y / 5);
+    enemy4.shape.setScale(Vector2f(0.1f, 0.1f));
+    
     vector<Boss> enemies;
     enemies.push_back(Boss(enemy1));
     enemies.push_back(Boss(enemy2));
     enemies.push_back(Boss(enemy3));
+    enemies.push_back(Boss(enemy4));
 
     int bShootTimer = 15;
 
