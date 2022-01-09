@@ -1,4 +1,4 @@
-﻿#include<iostream>
+#include<iostream>
 #include<SFML\Graphics.hpp>
 #include<SFML\Window.hpp>
 #include<SFML\System.hpp>
@@ -54,14 +54,8 @@ int main()
     Texture squirrelTex;
     squirrelTex.loadFromFile("textures/squirrel.png");
 
-    Texture earthBossTex;
-    earthBossTex.loadFromFile("textures/Boss2.png");
-
     Texture deadHumanBossTex;
     deadHumanBossTex.loadFromFile("textures/Boss1-2.png");
-
-    Texture deadEarthBossTex;
-    deadEarthBossTex.loadFromFile("textures/Boss2-3.png");
 
     Texture bulletTex;
     bulletTex.loadFromFile("textures/normalshoot.png");
@@ -111,21 +105,21 @@ int main()
     //===========================================================*/
 
     // round 1
-    Boss enemy1(&bigBirdTex);
+    Boss enemy1(&bigBirdTex, 1);
     enemy1.shape.setPosition(window.getSize().x / 2, window.getSize().y / 2);
-    Boss enemy2(&cowTex);
+    Boss enemy2(&cowTex, 1);
     enemy2.shape.setPosition(window.getSize().x / 3, window.getSize().y / 3);
     enemy2.shape.setScale(Vector2f(0.1f, 0.1f));
-    Boss enemy3(&duckTex);
+    Boss enemy3(&duckTex, 1);
     enemy3.shape.setPosition(window.getSize().x / 4, window.getSize().y / 4);
     enemy3.shape.setScale(Vector2f(0.3f, 0.3f));
-    Boss enemy4(&squirrelTex);
+    Boss enemy4(&squirrelTex, 1);
     enemy4.shape.setPosition(window.getSize().x / 5, window.getSize().y / 5);
     enemy4.shape.setScale(Vector2f(0.3f, 0.3f));
 
     // round 2
 
-    Boss enemy5(&principalTex);
+    Boss enemy5(&principalTex, 2);
     enemy5.shape.setPosition(window.getSize().x / 3, window.getSize().y / 3);
     enemy5.shape.setScale(Vector2f(0.3f, 0.3f));
 
