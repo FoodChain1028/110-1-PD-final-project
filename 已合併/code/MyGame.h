@@ -16,8 +16,8 @@ public:
     float size;
 
     Bullet();
-    Bullet(Texture &texture);
-  
+    Bullet(Texture& texture);
+
 };
 
 class Shield
@@ -73,7 +73,7 @@ public:
     Vector2f bossCenter;
     Vector2f bAimDir;
 
-    Boss(Texture* texture);
+    Boss(Texture* texture, int round);
     ~Boss() {}
 
 };
