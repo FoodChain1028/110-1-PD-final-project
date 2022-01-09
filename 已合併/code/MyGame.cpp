@@ -15,7 +15,7 @@ Bullet::Bullet()
     size = 0.02f;
 };
 
-Bullet::Bullet(Texture &texture) 
+Bullet::Bullet(Texture& texture)
 {
     this->shape.setTexture(texture);
     this->shape.setScale(Vector2f(0.02f, 0.02f));
@@ -49,9 +49,14 @@ Player::Player(Texture* texture)
 
 Boss::Boss(Texture* texture, int round)
 {   
-    if(round == 1)
+    if (round == 1)
     {
         this->HPMax = 300;
+    }
+
+    else if (round == 2)
+    {
+        this->HPMax = 1000;
     }
     
     this->HP = this->HPMax;
