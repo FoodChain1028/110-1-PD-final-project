@@ -30,19 +30,19 @@ int main()
         Init Textures
     //===========================================================*/
     Texture playerTex;
-    playerTex.loadFromFile("textures/FinnAdventureTime.png");
+    playerTex.loadFromFile("textures/player.png");
 
     Texture humanBossTex;
-    humanBossTex.loadFromFile("textures/JAKE_THE_DOG.png"); // my add
+    humanBossTex.loadFromFile("textures/big_bird.png"); // my add
 
     Texture monster2Tex;
-    monster2Tex.loadFromFile("textures/Original_Ice_King.png"); // my add
+    monster2Tex.loadFromFile("textures/principal.png"); // my add
 
     Texture longLineEneTex;
-    longLineEneTex.loadFromFile("textures/longLineEne.png"); // my add
+    longLineEneTex.loadFromFile("textures/cow.png"); // my add
 
     Texture bumbPrincessTex;
-    bumbPrincessTex.loadFromFile("textures/bumbPrincess.png");
+    bumbPrincessTex.loadFromFile("textures/duck.png");
 
     Texture earthBossTex;
     earthBossTex.loadFromFile("textures/Boss2.png");
