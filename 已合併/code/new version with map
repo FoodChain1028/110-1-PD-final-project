@@ -2,6 +2,7 @@
 #include<SFML\Graphics.hpp>
 #include<SFML\Window.hpp>
 #include<SFML\System.hpp>
+#include<SFML\Audio.hpp>
 #include<sstream>
 #include<cstdlib>
 #include<math.h>
@@ -11,10 +12,18 @@
 using namespace std;
 using namespace sf;
 
+sf::Music music;
+float volume = 100;
 
 int main()
 
 {   
+    music.openFromFile("music/Time.ogg");
+    music.setVolume(volume);
+    music.setLoop(true);
+    music.play();
+
+
     int z = 1;
     srand(time(NULL));
     clock_t start, stop;
@@ -193,7 +202,7 @@ int main()
     // machine gun
     Texture machinegunTex;
     machinegunTex.loadFromFile("textures/machinegun.png");
-    Weapon machinegun(machinegunTex, rolldice() , 2);
+    Weapon machinegun(machinegunTex, rolldice(), 2);
     guns.push_back(machinegun);
     havegun.push_back(false);
     gunbulletcnt.push_back(100);
@@ -592,7 +601,7 @@ int main()
                 }
             }
             if (guns.size() < 3)
-            {   
+            {
                 // gun
                 if (z % 3 == 1)
                 {
