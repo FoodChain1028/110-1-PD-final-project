@@ -48,7 +48,7 @@ Player::Player(Texture* texture)
 }
 
 Boss::Boss(Texture* texture, int round)
-{   
+{
     if (round == 1)
     {
         this->HPMax = 300;
@@ -58,7 +58,7 @@ Boss::Boss(Texture* texture, int round)
     {
         this->HPMax = 1000;
     }
-    
+
     this->HP = this->HPMax;
 
     this->shape.setTexture(*texture);
@@ -83,10 +83,10 @@ Vector2f rotaionMatrix(Vector2f v, int angle)
     return Vector2f(x, y);
 }
 
-Weapon::Weapon(Texture& tex, float n, int t)
+Weapon::Weapon(Texture& tex, Vector2f n, int t)
 {
     this->type = t;
     this->shape.setTexture(tex);
     this->shape.setScale(Vector2f(0.2f, 0.2f));
-    this->shape.setPosition(n, n);
+    this->shape.setPosition(n);
 }
