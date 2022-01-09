@@ -87,5 +87,5 @@ class Weapon
 public:
     Sprite shape;
     int type; // type1 = normal gun ; type2 = machine gun; type3 = ?;
-    Weapon(Texture& tex, float n, int t);
+    Weapon(Texture& tex, Vector2f n, int t);
 };
