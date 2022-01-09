@@ -47,9 +47,13 @@ Player::Player(Texture* texture)
     this->playerSpeed = 3.f;
 }
 
-Boss::Boss(Texture* texture)
-{
-    this->HPMax = 500;
+Boss::Boss(Texture* texture, int round)
+{   
+    if(round == 1)
+    {
+        this->HPMax = 300;
+    }
+    
     this->HP = this->HPMax;
 
     this->shape.setTexture(*texture);
