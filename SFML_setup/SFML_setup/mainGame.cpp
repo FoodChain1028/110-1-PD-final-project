@@ -104,13 +104,20 @@ int main()
     enemy1.shape.setPosition(window.getSize().x / 2, window.getSize().y / 2);
     Boss enemy2(& humanBossTex);
     enemy2.shape.setPosition(window.getSize().x / 3, window.getSize().y / 3);
+    enemy2.shape.setScale(Vector2f(0.8f, 0.8f));
     Boss enemy3(&bumbPrincessTex);
     enemy3.shape.setPosition(window.getSize().x / 4, window.getSize().y / 4);
+    enemy3.shape.setScale(Vector2f(0.3f, 0.3f));
+    Boss enemy4(&longLineEneTex);
+    enemy4.shape.setPosition(window.getSize().x / 5, window.getSize().y / 5);
+    enemy4.shape.setScale(Vector2f(0.1f, 0.1f));
+
 
     vector<Boss> enemies;
     enemies.push_back(Boss(enemy1));
     enemies.push_back(Boss(enemy2));
     enemies.push_back(Boss(enemy3));
+    enemies.push_back(Boss(enemy4));
 
     int bShootTimer = 15;
 
